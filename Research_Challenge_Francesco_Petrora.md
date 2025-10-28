@@ -36,7 +36,7 @@ In contrast, DAI, developed by MakerDAO, exemplifies the decentralized and crypt
 Viewed through a comparative macro-financial lens, USDT, USDC, and DAI delineate a continuum of monetary architectures within the stablecoin ecosystem. USDT embodies liquidity dominance grounded in reputation and scale, USDC institutionalizes transparency through regulation and DAI operationalizes decentralization through incentive design and smart-contract governance. Each achieves nominal stability through distinct mechanisms, corporate solvency, regulatory oversight, or algorithmic collateralization and thereby reflecting alternative approaches to the classical trilemma of monetary design: stability, decentralization, and credibility. Together, they provide a natural experiment in the privatization of money, where technology redefines not the function of currency, but the very source of trust on which monetary systems depend.
 The evolution of DAI also reveals the complex trade-offs between decentralization and stability. With the introduction of the Peg Stability Module (PSM) in 2020, MakerDAO allowed users to swap USDC and DAI at a 1:1 face value, fundamentally altering its monetary mechanics. Prior to the PSM, DAI could only be created through over-collateralization — for example, locking 150% of the intended issuance value in ETH. However, when DAI’s market price exceeded its peg (reaching $1.04 in September 2020) due to excess demand, the system lacked a corrective mechanism. The PSM resolved this by enabling arbitrage between DAI and USDC: if DAI traded above $1, users could mint DAI by depositing USDC and sell it for profit, pushing the price back down. While this innovation stabilized the peg, it also reduced DAI’s effective decentralization, as a significant portion of its collateral now consists of USDC, a centralized and regulated asset. This shift illustrates the inherent paradox of decentralized monetary systems, where efforts to enhance stability often reintroduce centralized dependencies, blurring the boundary between algorithmic and institutional trust.
 In addition to this analysis of existing stablecoins and their underlying mechanisms, I believe it would be important to design a stablecoin that follows a monetary policy rule, such as the Taylor Rule. 
-Fig.7 
+![Figure 7: Taylor Rule Formula](./images/6-oct-2010-taylor-rule-equation.jpg)
 I was unable to identify an existing stablecoin that explicitly applies this principle, but I consider it a promising development for a currency tailored to staking or lending platforms. By implementing such a rule, it would be possible to determine an equilibrium interest rate for the platform, based on a target inflation rate of the previously issued tokens and the observed inflation rate, while also incorporating the growth of on-chain activity (e.g., transaction volume) to evaluate whether the platform is operating above or below its reference level of economic activity. The value of the currency could then adjust dynamically as the interest rate changes, making it more or less attractive depending on its yield.
 However, during my research for protocols of this kind, I came across Basis, which sought to implement a comparable monetary framework which can be understood as implementing an algorithmic central bank. 
 The Basis protocol accomplishes this by algorithmically adjusting the supply of Basis tokens in response to changes in, for example, the Basis-USD exchange rate. This implements a monetary policy similar to that executed by central banks around the world, except it operates as a decentralized, protocol-enforced algorithm, without the need for direct human judgment.
@@ -103,6 +103,36 @@ In reduced form, an attack is profitable when UST trades at a discount large eno
 The run becomes **self-fulfilling** if many agents share this belief.
 
 From this framework I find it interesting to observe that if we limit $\kappa_t$ algorithmic stablecoins need explicit caps tying UST issuance to the market value of risk-absorbing equity (LUNA). Additionally, if most demand is subsidized savings (because of the subsidized deposits through Anchor), redemptions become one-sided when the subsidy is questioned. This was produced because demand for UST did not come from natural demand to transact and save money but from the incentive given by the subsidy for deposits in Anchor. Sustainable and natural demand reduces the massed-exit risk. Finally, we could create temporal limits for transactions or higher cost of conversion in order to reduce incentives to sell and reduce stress in users to bound $\phi_t$ and give market makers time to supply extra liquidity. Terra also raised native swap limits over time, which increased the surface for large and fast exits when confidence cracked.  
+
+
+
+## Bibliography
+
+1. Briola, A., Vidal-Tomás, D., Wang, Y., & Aste, T. (2022). *Anatomy of a Stablecoin’s Failure: The Terra–Luna Case.*  
+   University College London, Universitat Jaume I, Systemic Risk Centre (LSE). SSRN Working Paper No. 4184502.  
+   [Available at SSRN](https://ssrn.com/abstract=4184502)  
+
+2. Liu, J., Makarov, I., & Schoar, A. (2023). *Anatomy of a Run: The Terra–Luna Crash.*  
+   MIT Sloan School of Management, London School of Economics, and NBER Working Paper.  
+   [Available at MIT/LSE](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4420460)  
+
+3. MakerDAO (2017). *The Dai Stablecoin System Whitepaper.*  
+   [MakerDAO Whitepaper](https://makerdao.com/)  [oai_citation:0‡DaiDec17WP.pdf](sediment://file_00000000d98c61f5bccd68fea057c446)
+
+4. Tether Limited. (2014). *Tether: Fiat Currencies on the Bitcoin Blockchain.*  
+   [Tether White Paper](https://tether.to/en/white-papers/)  
+
+5. Circle Internet Financial LLC. (2025). *USDC Terms and Conditions.*  
+   [Circle Legal Documentation](https://www.circle.com/es-la/legal/usdc-terms)
+
+6. Coinbase Global, Inc. (2025). *Platform Overview and Legal Disclosures.*  
+   [Coinbase Official Site](https://www.coinbase.com/es-ar)
+
+7. [DeFiLlama – Decentralized Finance Data Aggregator](https://defillama.com/)  
+   Comprehensive real-time dashboard of DeFi protocols, stablecoin metrics, and liquidity data. Used for historical and comparative analysis.
+
+8. [Dune Analytics – On-chain Data Explorer](https://dune.com/discover/content/trending)  
+   Platform for blockchain analytics and visualization, providing on-chain datasets and SQL-based dashboards on stablecoins, swaps, and liquidity flows.
 
 
 
