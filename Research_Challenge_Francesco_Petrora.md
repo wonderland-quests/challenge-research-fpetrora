@@ -1,6 +1,6 @@
 # Wonderland Research Challenge — Stablecoins
 **Author:** Francesco Petrora  
-**Date:** 27th October 2025  
+**Date:** 28th October 2025  
 
 ## Introduction
 
@@ -36,16 +36,18 @@ In contrast, DAI, developed by MakerDAO, exemplifies the decentralized and crypt
 ### Discussion 
 
 Viewed through a comparative macro-financial lens, USDT, USDC, and DAI delineate a continuum of monetary architectures within the stablecoin ecosystem. USDT embodies liquidity dominance grounded in reputation and scale, USDC institutionalizes transparency through regulation and DAI operationalizes decentralization through incentive design and smart-contract governance. Each achieves nominal stability through distinct mechanisms, corporate solvency, regulatory oversight, or algorithmic collateralization and thereby reflecting alternative approaches to the classical trilemma of monetary design: stability, decentralization, and credibility. Together, they provide a natural experiment in the privatization of money, where technology redefines not the function of currency, but the very source of trust on which monetary systems depend.
-The evolution of DAI also reveals the complex trade-offs between decentralization and stability. With the introduction of the Peg Stability Module (PSM) in 2020, MakerDAO allowed users to swap USDC and DAI at a 1:1 face value, fundamentally altering its monetary mechanics. Prior to the PSM, DAI could only be created through over-collateralization — for example, locking 150% of the intended issuance value in ETH. However, when DAI’s market price exceeded its peg (reaching $1.04 in September 2020) due to excess demand, the system lacked a corrective mechanism. The PSM resolved this by enabling arbitrage between DAI and USDC: if DAI traded above $1, users could mint DAI by depositing USDC and sell it for profit, pushing the price back down. While this innovation stabilized the peg, it also reduced DAI’s effective decentralization, as a significant portion of its collateral now consists of USDC, a centralized and regulated asset. This shift illustrates the inherent paradox of decentralized monetary systems, where efforts to enhance stability often reintroduce centralized dependencies, blurring the boundary between algorithmic and institutional trust.
+The evolution of DAI also reveals the complex trade-offs between decentralization and stability. With the introduction of the Peg Stability Module (PSM) in 2020, MakerDAO allowed users to swap USDC and DAI at a 1:1 face value, fundamentally altering its monetary mechanics. Prior to the PSM, DAI could only be created through over-collateralization — for example, locking 150% of the intended issuance value in ETH. However, when DAI’s market price exceeded its peg due to excess demand, the system lacked a corrective mechanism. The PSM resolved this by enabling arbitrage between DAI and USDC: if DAI traded above $1, users could mint DAI by depositing USDC and sell it for profit, pushing the price back down. While this innovation stabilized the peg, it also reduced DAI’s effective decentralization, as a significant portion of its collateral now consists of USDC, a centralized and regulated asset. This shift illustrates the inherent paradox of decentralized monetary systems, where efforts to enhance stability often reintroduce centralized dependencies, blurring the boundary between algorithmic and institutional trust.
 In addition to this analysis of existing stablecoins and their underlying mechanisms, I believe it would be important to design a stablecoin that follows a monetary policy rule, such as the Taylor Rule. 
 
-$$i_t = 2 + \pi_t + a(\pi_t - \pi^*) + b(y_t - y_t^*)$$
+$$
+i_t = 2 + \pi_t + a(\pi_t - \pi^*) + b(y_t - y_t^*)$$
 
 where:
 - $i_t$ is the prescribed value of the policy interest rate in period $t$
 - $\pi_t - \pi^*$ is the deviation of the actual inflation rate from its target in period $t$
 - $y_t - y_t^*$ is the output gap (deviation of actual real output from potential output) in period $t$
 - $a$ and $b$ are positive numbers
+
 
 I was unable to identify an existing stablecoin that explicitly applies this principle, but I consider it a promising development for a currency tailored to staking or lending platforms. By implementing such a rule, it would be possible to determine an equilibrium interest rate for the platform, based on a target inflation rate of the previously issued tokens and the observed inflation rate, while also incorporating the growth of on-chain activity (e.g., transaction volume) to evaluate whether the platform is operating above or below its reference level of economic activity. The value of the currency could then adjust dynamically as the interest rate changes, making it more or less attractive depending on its yield.
 However, during my research for protocols of this kind, I came across Basis, which sought to implement a comparable monetary framework which can be understood as implementing an algorithmic central bank. 
@@ -69,13 +71,16 @@ From a macroeconomic perspective, this system would resemble an ideal currency b
 ## c) Model 
 This subsection models the economics of a run against an algorithmic stablecoin using the Terra–UST collapse as a benchmark case. I decided to use this example to help me explain the mechanisms of a “death spiral” or “bank run” in a de-peg of an algorithmic stablecoin in order to create a simple model based on the events that produced the crisis in 2022. 
 In the beginning, Terra combined an on-chain mint/burn convertibility between UST and LUNA with a heavily subsidized savings protocol (called Anchor). The design created a loop, where as deposits surged to capture yield, the outstanding UST supply grew, and the system became more fragile to a coordination event. When the peg faltered in 2022, redemptions and arbitrage minted large amounts of LUNA, depressing its price and accelerating the “death spiral” that ultimately destroyed both tokens. The run unfolded across chains and was amplified by transparent on-chain observability, with large wallets exiting first.
-In other words, UST functioned as a dollar-pegged liability convertible, via a native swap, into $1 worth of LUNA, while the reverse operation minted UST against LUNA (burning LUNA). This arbitrage channel relied on accurate oracle prices and sufficient risk appetite by investors were the system remained viable only if swap-induced dilution of LUNA did not trigger pre-emptive LUNA selling (Burning UST, minting LUNA and therefore decreasing LUNA market cap and its value because of excessive supply).
-Anchor’s (The lending protocol which captured deposits) role was pivotal, it offered 20% yields and, prior to the crash, held roughly three-quarters of the UST float, a composition that maximized run externalities because a single venue concentrated all the deposits. This type of “subsidy” for deposits produced its growing unsustainability as deposits skyrocketed, as well as the fact that 75% of circulating UST sat in Anchor before the 2022 collapse.  
+In other words, UST functioned as a dollar-pegged liability convertible, via a native swap, into one dollar worth of LUNA, while the reverse operation minted UST against LUNA (burning LUNA). This arbitrage channel relied on accurate oracle prices and sufficient risk appetite by investors were the system remained viable only if swap-induced dilution of LUNA did not trigger pre-emptive LUNA selling (Burning UST, minting LUNA and therefore decreasing LUNA market cap and its value because of excessive supply).
+Anchor’s (The lending protocol which captured deposits) role was pivotal, it offered 20\% yields and, prior to the crash, held roughly three-quarters of the UST float, a composition that maximized run externalities because a single venue concentrated all the deposits. This type of subsidy for deposits produced its growing unsustainability as deposits skyrocketed, as well as the fact that 75\% of circulating UST sat in Anchor before the 2022 collapse.  
 Before the crash, liquidity conditions around the UST Curve pool deteriorated amid migration to a new pool where large wallets withdrew UST from Anchor and sold on Curve, widening the discount and triggering further exits. The Luna Foundation Guard mobilized reserves in an attempt to restore the peg. Later on, UST traded below $0.20 and LUNA had essentially collapsed.
 In figure 8 we observe the collapse of the hourly price of LUNA and the de-peg of the UST compared to the price of Bitcoin. 
+
 ![Figure 8: Hourly prices of UST, LUNA and BTC on 2022](images/Hourly.jpg)
+
 Figure 9 shows us the total collapse of the LUNA price against de dollar since it creation up to date.
 ![Figure 9: LUNA collapse](images/TERRA.jpg)
+
 Now we consider an attacker who can trade across venues and use the native swap.  
 Let $P_t^{UST}$ denote the secondary-market UST price, $M_t$ the LUNA market cap, $S_t^{UST}$ the UST supply, and $\phi_t$ a dilution factor mapping a UST–LUNA swap into incremental LUNA minted and expected price impact.  
 
@@ -88,12 +93,8 @@ The per-unit gross “arbitrage” value of the swap is approximately $1 - P_t^{
 
 The exciter’s problem is to choose $x$ to maximize:
 
-$$
-\Pi(x) \approx x(1 - P_t^{UST})
-- \underbrace{F_{\text{swap}}(x)}_{\text{fees/caps}}
-- \underbrace{\text{Impact}_{LUNA}(x;\,L)}_{\text{depth/slippage}}
-- \text{tx fees}
-$$
+$$\Pi(x) \approx x(1 - P_t^{UST}) - \underbrace{F_{\text{swap}}(x)}_{\text{fees/caps}} - \underbrace{\text{Impact}_{LUNA}(x;\,L)}_{\text{depth/slippage}} - \text{tx fees}$$
+
 
 A “bank run” equilibrium emerges when many agents reach $\Pi(x) > 0$ simultaneously, and when expectations internalize that other agents’ swaps will depress $p^{LUNA}$ further via dilution, raising future $\phi_t$.  
 More swapping produces more LUNA supply, which also decreases its value. Rational LUNA holders front-run by selling, causing the “death spiral.”
@@ -110,7 +111,7 @@ As $\kappa_t$ approaches one, the system breaks — conversion flows produce lar
 Withdrawals accelerate precisely when market participants observe that LUNA’s market value converges to the outstanding UST — a small public signal producing a shift to the “run” equilibrium through rational expectations.
 
 In reduced form, an attack is profitable when UST trades at a discount large enough that $x(1 - P_t^{UST})$ exceeds cumulative frictions, and when the agent expects subsequent dilution to degrade LUNA sufficiently fast that waiting is dominated by exiting now.  
-The run becomes **self-fulfilling** if many agents share this belief.
+The run becomes self-fulfilling if many agents share this belief.
 
 From this framework I find it interesting to observe that if we limit $\kappa_t$ algorithmic stablecoins need explicit caps tying UST issuance to the market value of risk-absorbing equity (LUNA). Additionally, if most demand is subsidized savings (because of the subsidized deposits through Anchor), redemptions become one-sided when the subsidy is questioned. This was produced because demand for UST did not come from natural demand to transact and save money but from the incentive given by the subsidy for deposits in Anchor. Sustainable and natural demand reduces the massed-exit risk. Finally, we could create temporal limits for transactions or higher cost of conversion in order to reduce incentives to sell and reduce stress in users to bound $\phi_t$ and give market makers time to supply extra liquidity. Terra also raised native swap limits over time, which increased the surface for large and fast exits when confidence cracked.  
 
