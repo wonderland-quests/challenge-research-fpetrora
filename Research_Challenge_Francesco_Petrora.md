@@ -8,16 +8,16 @@ Stablecoins have emerged as one of the most significant innovations within the c
 From a monetary economics perspective, stablecoins represent an experimental evolution of private money creation in the digital age, synthetic currencies that attempt to replicate the functions of fiat money through distinct institutional architectures. Within this framework, USDT (Tether), USDC (USD Coin) and DAI stand out as dominant dollar-pegged stablecoins whose underlying mechanisms illustrate the contrast between market-driven trust, regulatory-driven transparency and algorithmic control. 
 In the next figure we can observe the total market cap of stablecoins across all the different blockchains and the USDT dominance that, as for today, it is almost 60% of the market accounting for the biggest operated volume of the world. In the graph we can see this dominance as the dark green area accounts for USDT dominance and the dark blue shows the dominance of the USDC. 
 
-![Figure 1: Total Stablecoin Market Cap](images/Total.png)
+![Figure 1: Total Stablecoin Market Cap](images/Total.jpg)
 
 ## a) Analysis
 ### USDT 
 USDT, issued by Tether Limited, is designed as a fiat-collateralized token maintaining a one to one parity with the U.S. dollar. Each USDT in circulation is nominally backed by an equivalent amount of real-world assets, including cash deposits, short-term government securities, and money-market instruments held in custody by Tether Limited. Its whitepaper describes USDT as a digital token backed by fiat currency, whose principal innovation lies in using the Bitcoin blockchain, through the Omni Layer protocol, to embed a verifiable record of issuance and transfers. Tether’s Proof of Reserves framework mathematically equates total tokens in circulation to fiat deposits under custody, formalized in the so-called “Solvency Equation” (TUSD = DUSD). 
 By publishing both on-chain data and audited bank balances, the company aimed to maintain confidence in its peg. However, the structure remains inherently centralized, Tether Limited retains sole authority to issue and redeem tokens, and users must ultimately rely on the solvency and operational integrity of a single corporate entity and its banking partners. The whitepaper itself acknowledges this institutional dependency as a necessary trade-off to ensure liquidity and simplicity, while deferring full decentralization to future system iterations. Figure 1 depicts market cap data and circulating tokens for USDT with a percentage of tokens in each of the main blockchains. Figure 2 shows the price movement around the peg to the dollar.
 
-![Figure 2: USDT Market cap and main blockchains](images/USDT.png) 
+![Figure 2: USDT Market cap and main blockchains](images/USDT.jpg) 
 
-![Figure 3: USDT Peg Stability](images/Precio1.png)
+![Figure 3: USDT Peg Stability](images/Precio1.jpg)
 In practice, USDT’s sustainability derives not from algorithmic mechanisms but from market confidence, the collective belief that redemption claims will be honored. As a result, its stability operates analogously to a fixed-exchange-rate regime under imperfect convertibility: credibility substitutes for convertibility during stress periods. This model has proven effective at scale, as Tether now accounts for the majority of global stablecoin transaction volume, yet it exposes users to traditional financial risks, including counterparty risk, reserve opacity, and jurisdictional concentration. The economic implication is that USDT functions as a de facto shadow dollar, privately issued and globally liquid, but lacking the institutional discipline typical of regulated financial intermediaries.
 As of today, however, many observers and market participants speculate that Tether may not be maintaining full parity with the U.S. dollar through genuine reserves. Critics argue that the company could be issuing unbacked USDT, that is, tokens not fully collateralized by dollar-denominated assets or U.S Treasury bills. If such allegations were ever proven true, it could trigger a systemic default risk for Tether and propagate a contagion effect throughout the crypto ecosystem. Much like a classic bank run, once collective confidence collapses, users would rush to redeem their holdings, only to discover that the circulating supply exceeds actual reserves. This erosion of trust could precipitate a liquidity crisis across exchanges and DeFi protocols, as USDT remains the principal settlement asset in global crypto markets. 
 
@@ -25,20 +25,28 @@ As of today, however, many observers and market participants speculate that Teth
 USDC, created by Circle Internet Financial under the Centre Consortium, represents a more regulated and institutionalized approach. It operates under a full-reserve custodial architecture, where each token corresponds to a U.S. dollar or a short-term Treasury instrument held in segregated accounts with regulated financial institutions. Circle’s legal framework, articulated in its USDC Terms of Use, subjects the issuer to U.S. money-transmitter and anti-money-laundering laws, ensuring compliance and periodic attestation by third-party auditors. From an economic standpoint, USDC functions as a digitally native representation of high-quality liquid assets, effectively transforming the infrastructure of dollar settlement without altering its credit structure. Its sustainability rests on the credibility of regulated custody and legal accountability, aligning it more closely with a money-market-fund-like instrument than with a crypto-native token. Yet this same compliance orientation introduces centralization and policy dependence. Circle can freeze addresses, halt redemptions, or modify terms subject to U.S. jurisdiction. Thus, while USDC offers superior transparency and regulatory legitimacy relative to USDT, it does so at the cost of permissionlessness and global neutrality illustrating how institutional trust can substitute for decentralization. Figures 3 and 4 show the percentage of USDC in each of the principal blockchains as well as the peg to the US dollar.
 ![Figure 3: USDC Blockchain Allocation](images/USDC.png) 
 
-![Figure 4: USDC Peg Stability](images/Precio2.png)
+![Figure 4: USDC Peg Stability](images/Precio2.jpg)
 
 ### DAI 
 In contrast, DAI, developed by MakerDAO, exemplifies the decentralized and crypto-collateralized model of monetary stability. According to its whitepaper , DAI is a stablecoin whose value is softly pegged to the U.S. dollar through a system of collateralized debt positions, autonomous feedback mechanisms, and external incentives. Rather than being backed by fiat, DAI is issued when users lock volatile crypto assets such as ETH, wrapped BTC, or even tokenized stablecoins like USDC, into smart-contract vaults that over-collateralize the position. The system dynamically maintains solvency through liquidation auctions and the stability fee, which functions analogously to an interest rate in traditional monetary policy. Governance decisions including collateral types, risk parameters, and interest rates are determined by holders of the MKR token, creating an endogenous monetary policy governed by decentralized voting. This mechanism effectively replaces institutional trust with algorithmic trust market incentives, transparency, and code enforcement collectively uphold the peg. Nonetheless, DAI’s sustainability is not absolute. Its exposure to crypto-asset volatility and reliance on certain centralized assets as collateral (USDC) introduce systemic feedback risks, while over-collateralization imposes a capital efficiency cost. As well as with the other stablecoins, figure 5 and 6 shows the same parameters of market cap and token allocation in each blockchain as well as its historic price. 
-![Figure 5: DAI Market cap and allocation](images/DAI.png) 
+![Figure 5: DAI Market cap and allocation](images/DAI.jpg) 
 
-![Figure 6: DAI Price Stability](images/Precio3.png)
+![Figure 6: DAI Price Stability](images/Precio3.jpg)
 
 ### Discussion 
 
 Viewed through a comparative macro-financial lens, USDT, USDC, and DAI delineate a continuum of monetary architectures within the stablecoin ecosystem. USDT embodies liquidity dominance grounded in reputation and scale, USDC institutionalizes transparency through regulation and DAI operationalizes decentralization through incentive design and smart-contract governance. Each achieves nominal stability through distinct mechanisms, corporate solvency, regulatory oversight, or algorithmic collateralization and thereby reflecting alternative approaches to the classical trilemma of monetary design: stability, decentralization, and credibility. Together, they provide a natural experiment in the privatization of money, where technology redefines not the function of currency, but the very source of trust on which monetary systems depend.
 The evolution of DAI also reveals the complex trade-offs between decentralization and stability. With the introduction of the Peg Stability Module (PSM) in 2020, MakerDAO allowed users to swap USDC and DAI at a 1:1 face value, fundamentally altering its monetary mechanics. Prior to the PSM, DAI could only be created through over-collateralization — for example, locking 150% of the intended issuance value in ETH. However, when DAI’s market price exceeded its peg (reaching $1.04 in September 2020) due to excess demand, the system lacked a corrective mechanism. The PSM resolved this by enabling arbitrage between DAI and USDC: if DAI traded above $1, users could mint DAI by depositing USDC and sell it for profit, pushing the price back down. While this innovation stabilized the peg, it also reduced DAI’s effective decentralization, as a significant portion of its collateral now consists of USDC, a centralized and regulated asset. This shift illustrates the inherent paradox of decentralized monetary systems, where efforts to enhance stability often reintroduce centralized dependencies, blurring the boundary between algorithmic and institutional trust.
 In addition to this analysis of existing stablecoins and their underlying mechanisms, I believe it would be important to design a stablecoin that follows a monetary policy rule, such as the Taylor Rule. 
-![Figure 7: Taylor Rule Formula](images/6-oct-2010-taylor-rule-equation.jpg)
+
+$$i_t = 2 + \pi_t + a(\pi_t - \pi^*) + b(y_t - y_t^*)$$
+
+where:
+- $i_t$ is the prescribed value of the policy interest rate in period $t$
+- $\pi_t - \pi^*$ is the deviation of the actual inflation rate from its target in period $t$
+- $y_t - y_t^*$ is the output gap (deviation of actual real output from potential output) in period $t$
+- $a$ and $b$ are positive numbers
+
 I was unable to identify an existing stablecoin that explicitly applies this principle, but I consider it a promising development for a currency tailored to staking or lending platforms. By implementing such a rule, it would be possible to determine an equilibrium interest rate for the platform, based on a target inflation rate of the previously issued tokens and the observed inflation rate, while also incorporating the growth of on-chain activity (e.g., transaction volume) to evaluate whether the platform is operating above or below its reference level of economic activity. The value of the currency could then adjust dynamically as the interest rate changes, making it more or less attractive depending on its yield.
 However, during my research for protocols of this kind, I came across Basis, which sought to implement a comparable monetary framework which can be understood as implementing an algorithmic central bank. 
 The Basis protocol accomplishes this by algorithmically adjusting the supply of Basis tokens in response to changes in, for example, the Basis-USD exchange rate. This implements a monetary policy similar to that executed by central banks around the world, except it operates as a decentralized, protocol-enforced algorithm, without the need for direct human judgment.
@@ -65,9 +73,9 @@ In other words, UST functioned as a dollar-pegged liability convertible, via a n
 Anchor’s (The lending protocol which captured deposits) role was pivotal, it offered 20% yields and, prior to the crash, held roughly three-quarters of the UST float, a composition that maximized run externalities because a single venue concentrated all the deposits. This type of “subsidy” for deposits produced its growing unsustainability as deposits skyrocketed, as well as the fact that 75% of circulating UST sat in Anchor before the 2022 collapse.  
 Before the crash, liquidity conditions around the UST Curve pool deteriorated amid migration to a new pool where large wallets withdrew UST from Anchor and sold on Curve, widening the discount and triggering further exits. The Luna Foundation Guard mobilized reserves in an attempt to restore the peg. Later on, UST traded below $0.20 and LUNA had essentially collapsed.
 In figure 8 we observe the collapse of the hourly price of LUNA and the de-peg of the UST compared to the price of Bitcoin. 
-![Figure 8: Hourly prices of UST, LUNA and BTC on 2022](images/Hourly.png)
+![Figure 8: Hourly prices of UST, LUNA and BTC on 2022](images/Hourly.jpg)
 Figure 9 shows us the total collapse of the LUNA price against de dollar since it creation up to date.
-![Figure 9: LUNA collapse](images/TERRA.png)
+![Figure 9: LUNA collapse](images/TERRA.jpg)
 Now we consider an attacker who can trade across venues and use the native swap.  
 Let $P_t^{UST}$ denote the secondary-market UST price, $M_t$ the LUNA market cap, $S_t^{UST}$ the UST supply, and $\phi_t$ a dilution factor mapping a UST–LUNA swap into incremental LUNA minted and expected price impact.  
 
@@ -80,12 +88,12 @@ The per-unit gross “arbitrage” value of the swap is approximately $1 - P_t^{
 
 The exciter’s problem is to choose $x$ to maximize:
 
-$
+$$
 \Pi(x) \approx x(1 - P_t^{UST})
 - \underbrace{F_{\text{swap}}(x)}_{\text{fees/caps}}
 - \underbrace{\text{Impact}_{LUNA}(x;\,L)}_{\text{depth/slippage}}
-- \text{tx fees}.
-$
+- \text{tx fees}
+$$
 
 A “bank run” equilibrium emerges when many agents reach $\Pi(x) > 0$ simultaneously, and when expectations internalize that other agents’ swaps will depress $p^{LUNA}$ further via dilution, raising future $\phi_t$.  
 More swapping produces more LUNA supply, which also decreases its value. Rational LUNA holders front-run by selling, causing the “death spiral.”
