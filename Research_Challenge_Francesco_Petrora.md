@@ -8,7 +8,7 @@ Stablecoins have emerged as one of the most significant innovations within the c
 From a monetary economics perspective, stablecoins represent an experimental evolution of private money creation in the digital age, synthetic currencies that attempt to replicate the functions of fiat money through distinct institutional architectures. Within this framework, USDT (Tether), USDC (USD Coin) and DAI stand out as dominant dollar-pegged stablecoins whose underlying mechanisms illustrate the contrast between market-driven trust, regulatory-driven transparency and algorithmic control. 
 In the next figure we can observe the total market cap of stablecoins across all the different blockchains and the USDT dominance that, as for today, it is almost 60% of the market accounting for the biggest operated volume of the world. In the graph we can see this dominance as the dark green area accounts for USDT dominance and the dark blue shows the dominance of the USDC. 
 
-![Figure 1: Total Stablecoin Market Cap](./images/Total.png)
+![Figure 1: Total Stablecoin Market Cap](https://github.com/wonderland-quests/challenge-research-fpetrora/raw/main/images/total.png)
 
 ## a) Analysis
 ### USDT 
@@ -19,7 +19,7 @@ Figure 1 depicts market cap data and circulating tokens for USDT with a percenta
 
 ![Figure 2: USDT Market cap and main blockchains](./images/USDT.png) 
 
-![Figure 3: USDT Peg Stability](./images/Precio1.png)
+![Figure 3: USDT Peg Stability](./images/Precio3.png)
 
 In practice, USDT’s sustainability derives not from algorithmic mechanisms but from market confidence, the collective belief that redemption claims will be honored. As a result, its stability operates analogously to a fixed-exchange-rate regime under imperfect convertibility: credibility substitutes for convertibility during stress periods. This model has proven effective at scale, as Tether now accounts for the majority of global stablecoin transaction volume, yet it exposes users to traditional financial risks, including counterparty risk, reserve opacity, and jurisdictional concentration. The economic implication is that USDT functions as a de facto shadow dollar, privately issued and globally liquid, but lacking the institutional discipline typical of regulated financial intermediaries.
 
@@ -30,7 +30,7 @@ USDC, created by Circle Internet Financial under the Centre Consortium, represen
 
  Figures 3 and 4 show the percentage of USDC in each of the principal blockchains as well as the peg to the US dollar.
 
-![Figure 3: USDC Blockchain Allocation](./images/usdc.png) 
+![Figure 3: USDC Blockchain Allocation](./images/USDC.jpg) 
 
 ![Figure 4: USDC Peg Stability](./images/Precio2.png)
 
@@ -41,13 +41,13 @@ As well as with the other stablecoins, figure 5 and 6 shows the same parameters 
 
 ![Figure 5: DAI Market cap and allocation](./images/DAI.png) 
 
-![Figure 6: DAI Price Stability](./images/Precio3.png)
+![Figure 6: DAI Price Stability](./images/Precio1.png)
 
 ### Discussion 
 
 Viewed through a comparative macro-financial lens, USDT, USDC, and DAI delineate a continuum of monetary architectures within the stablecoin ecosystem. USDT embodies liquidity dominance grounded in reputation and scale, USDC institutionalizes transparency through regulation and DAI operationalizes decentralization through incentive design and smart-contract governance. Each achieves nominal stability through distinct mechanisms, corporate solvency, regulatory oversight, or algorithmic collateralization and thereby reflecting alternative approaches to the classical trilemma of monetary design: stability, decentralization, and credibility. Together, they provide a natural experiment in the privatization of money, where technology redefines not the function of currency, but the very source of trust on which monetary systems depend.
 
-The evolution of DAI also reveals the complex trade-offs between decentralization and stability. With the introduction of the Peg Stability Module (PSM) in 2020, MakerDAO allowed users to swap USDC and DAI at a 1:1 face value, fundamentally altering its monetary mechanics. Prior to the PSM, DAI could only be created through over-collateralization — for example, locking 150% of the intended issuance value in ETH. However, when DAI’s market price exceeded its peg due to excess demand, the system lacked a corrective mechanism. The PSM resolved this by enabling arbitrage between DAI and USDC: if DAI traded above $1, users could mint DAI by depositing USDC and sell it for profit, pushing the price back down. While this innovation stabilized the peg, it also reduced DAI’s effective decentralization, as a significant portion of its collateral now consists of USDC, a centralized and regulated asset. This shift illustrates the inherent paradox of decentralized monetary systems, where efforts to enhance stability often reintroduce centralized dependencies, blurring the boundary between algorithmic and institutional trust.
+The evolution of DAI also reveals the complex trade-offs between decentralization and stability. With the introduction of the Peg Stability Module (PSM) in 2020, MakerDAO allowed users to swap USDC and DAI at a 1:1 face value, fundamentally altering its monetary mechanics. Prior to the PSM, DAI could only be created through over-collateralization, for example, locking 150% of the intended issuance value in ETH. However, when DAI’s market price exceeded its peg due to excess demand, the system lacked a corrective mechanism. The PSM resolved this by enabling arbitrage between DAI and USDC, if DAI traded above $1, users could mint DAI by depositing USDC and sell it for profit, pushing the price back down. While this innovation stabilized the peg, it also reduced DAI’s effective decentralization, as a significant portion of its collateral now consists of USDC, a centralized and regulated asset. This shift illustrates the inherent paradox of decentralized monetary systems, where efforts to enhance stability often reintroduce centralized dependencies, blurring the boundary between algorithmic and institutional trust.
 
 In addition to this analysis of existing stablecoins and their underlying mechanisms, I believe it would be important to design a stablecoin that follows a monetary policy rule, such as the Taylor Rule. 
 
@@ -107,10 +107,10 @@ Before the crash, liquidity conditions around the UST Curve pool deteriorated am
 
 In figure 8 we observe the collapse of the hourly price of LUNA and the de-peg of the UST compared to the price of Bitcoin. 
 
-![Figure 8: Hourly prices of UST, LUNA and BTC on 2022](./images/caida.png)
+![Figure 8: Hourly prices of UST, LUNA and BTC on 2022](./images/Hourly.jpg)
 
 Figure 9 shows us the total collapse of the LUNA price against de dollar since it creation up to date.
-![Figure 9: LUNA collapse](./images/terra.jpg)
+![Figure 9: LUNA collapse](./images/caida.png)
 
 Now we consider an attacker who can trade across venues and use the native swap.  
 Let $P_t^{UST}$ denote the secondary-market UST price, $M_t$ the LUNA market cap, $S_t^{UST}$ the UST supply, and $\phi_t$ a dilution factor mapping a UST–LUNA swap into incremental LUNA minted and expected price impact.  
