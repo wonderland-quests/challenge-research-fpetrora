@@ -8,7 +8,7 @@ Stablecoins have emerged as one of the most significant innovations within the c
 From a monetary economics perspective, stablecoins represent an experimental evolution of private money creation in the digital age, synthetic currencies that attempt to replicate the functions of fiat money through distinct institutional architectures. Within this framework, USDT (Tether), USDC (USD Coin) and DAI stand out as dominant dollar-pegged stablecoins whose underlying mechanisms illustrate the contrast between market-driven trust, regulatory-driven transparency and algorithmic control. 
 In the next figure we can observe the total market cap of stablecoins across all the different blockchains and the USDT dominance that, as for today, it is almost 60% of the market accounting for the biggest operated volume of the world. In the graph we can see this dominance as the dark green area accounts for USDT dominance and the dark blue shows the dominance of the USDC. 
 
-![Figure 1: Total Stablecoin Market Cap](./images/total.png)
+![Figure 1: Total Stablecoin Market Cap](./images/Total.png)
 
 ## a) Analysis
 ### USDT 
@@ -17,9 +17,9 @@ By publishing both on-chain data and audited bank balances, the company aimed to
 
 Figure 1 depicts market cap data and circulating tokens for USDT with a percentage of tokens in each of the main blockchains. Figure 2 shows the price movement around the peg to the dollar.
 
-![Figure 2: USDT Market cap and main blockchains](./images/usdt.png) 
+![Figure 2: USDT Market cap and main blockchains](./images/USDT.png) 
 
-![Figure 3: USDT Peg Stability](./images/P1.png)
+![Figure 3: USDT Peg Stability](./images/Precio1.png)
 
 In practice, USDT’s sustainability derives not from algorithmic mechanisms but from market confidence, the collective belief that redemption claims will be honored. As a result, its stability operates analogously to a fixed-exchange-rate regime under imperfect convertibility: credibility substitutes for convertibility during stress periods. This model has proven effective at scale, as Tether now accounts for the majority of global stablecoin transaction volume, yet it exposes users to traditional financial risks, including counterparty risk, reserve opacity, and jurisdictional concentration. The economic implication is that USDT functions as a de facto shadow dollar, privately issued and globally liquid, but lacking the institutional discipline typical of regulated financial intermediaries.
 
@@ -32,16 +32,16 @@ USDC, created by Circle Internet Financial under the Centre Consortium, represen
 
 ![Figure 3: USDC Blockchain Allocation](./images/usdc.png) 
 
-![Figure 4: USDC Peg Stability](./images/P2.png)
+![Figure 4: USDC Peg Stability](./images/Precio2.png)
 
 ### DAI 
 In contrast, DAI, developed by MakerDAO, exemplifies the decentralized and crypto-collateralized model of monetary stability. According to its whitepaper , DAI is a stablecoin whose value is softly pegged to the U.S. dollar through a system of collateralized debt positions, autonomous feedback mechanisms, and external incentives. Rather than being backed by fiat, DAI is issued when users lock volatile crypto assets such as ETH, wrapped BTC, or even tokenized stablecoins like USDC, into smart-contract vaults that over-collateralize the position. The system dynamically maintains solvency through liquidation auctions and the stability fee, which functions analogously to an interest rate in traditional monetary policy. Governance decisions including collateral types, risk parameters, and interest rates are determined by holders of the MKR token, creating an endogenous monetary policy governed by decentralized voting. This mechanism effectively replaces institutional trust with algorithmic trust market incentives, transparency, and code enforcement collectively uphold the peg. Nonetheless, DAI’s sustainability is not absolute. Its exposure to crypto-asset volatility and reliance on certain centralized assets as collateral (USDC) introduce systemic feedback risks, while over-collateralization imposes a capital efficiency cost. 
 
 As well as with the other stablecoins, figure 5 and 6 shows the same parameters of market cap and token allocation in each blockchain as well as its historic price. 
 
-![Figure 5: DAI Market cap and allocation](./images/dai.png) 
+![Figure 5: DAI Market cap and allocation](./images/DAI.png) 
 
-![Figure 6: DAI Price Stability](./images/P3.png)
+![Figure 6: DAI Price Stability](./images/Precio3.png)
 
 ### Discussion 
 
@@ -107,10 +107,10 @@ Before the crash, liquidity conditions around the UST Curve pool deteriorated am
 
 In figure 8 we observe the collapse of the hourly price of LUNA and the de-peg of the UST compared to the price of Bitcoin. 
 
-![Figure 8: Hourly prices of UST, LUNA and BTC on 2022](./images/Hora.png)
+![Figure 8: Hourly prices of UST, LUNA and BTC on 2022](./images/caida.png)
 
 Figure 9 shows us the total collapse of the LUNA price against de dollar since it creation up to date.
-![Figure 9: LUNA collapse](./images/terra.png)
+![Figure 9: LUNA collapse](./images/terra.jpg)
 
 Now we consider an attacker who can trade across venues and use the native swap.  
 Let $P_t^{UST}$ denote the secondary-market UST price, $M_t$ the LUNA market cap, $S_t^{UST}$ the UST supply, and $\phi_t$ a dilution factor mapping a UST–LUNA swap into incremental LUNA minted and expected price impact.  
